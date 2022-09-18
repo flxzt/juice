@@ -28,3 +28,8 @@ juice_exclude_menu = [
     "exclude_from_nav"
 ]
 repository_url = "https://github.com/huhu/juice"
+
+[extra.analytics]
+enabled = false
+goatcounter_user = "your_user"
+goatcounter_host = "example.com"    # default= goatcounter.com

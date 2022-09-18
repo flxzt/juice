@@ -16,6 +16,19 @@
     {% endblock fonts %}
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="{{ get_url(path="juice.css") }}">
+
+    {# Analytics #}
+    {% if config.extra.analytics.enabled and config.extra.analytics.goatcounter_user %}
+        {% set user = config.extra.analytics.goatcounter_user %}
+        {% set host = config.extra.analytics.goatcounter_host | default(value="goatcounter.com") %}
+
+        <script data-goatcounter="https://{{ user }}.{{ host }}/count" async src="{{ get_url(path="js/count.js") }}"></script>
+        <noscript>
+            {# EasyList blocks '.com/count?', so we have to use '.com//count' #}
+            <img src="https://{{ user }}.{{ host }}//count?p={{ current_path }}&t={{ page.title | default(value=config.title) }}">
+        </noscript>
+    {% endif %} 
+
     {% block head %}
     <link rel="stylesheet" href="{{ get_url(path="carbon.css") }}">
     {% endblock head %}
