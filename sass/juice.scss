@@ -20,11 +20,11 @@ ul {
   margin-top: 0.5rem;
 }
 
-ul > li {
+ul>li {
   padding: 0.3rem 0;
 }
 
-p > img {
+p>img {
   width: 100%;
   height: auto;
 }
@@ -68,15 +68,34 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   background-color: var(--primary-color);
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 0 40px;
+
+  section {
+    padding: 2ch 5rem;
+  }
 
   .explore-more {
     position: absolute;
     bottom: 20px;
     cursor: pointer;
+  }
+
+  .hero-image {
+    min-width: 33%;
+  }
+
+  @media screen and (max-width: 768px) {
+    section {
+      padding: 0 2rem;
+    }
+
+    .hero-image {
+      display: none
+    }
   }
 }
 
@@ -95,7 +114,8 @@ main {
     color: #424242;
   }
 
-  .toc-item a, .toc-item-child a {
+  .toc-item a,
+  .toc-item-child a {
     color: var(--secondary-text-color);
 
     &:hover {
@@ -104,7 +124,8 @@ main {
     }
   }
 
-  .toc-item a.active, .toc-item-child a.active {
+  .toc-item a.active,
+  .toc-item-child a.active {
     color: var(--toc-highlight-text-color);
   }
 
@@ -187,7 +208,8 @@ footer {
     padding: 0;
   }
 
-  .explore-more, .toc {
+  .explore-more,
+  .toc {
     display: none;
   }
 
@@ -202,5 +224,4 @@ footer {
     width: 215px;
     margin: 2rem auto 0;
   }
-
 }
